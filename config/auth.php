@@ -112,4 +112,38 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Roles and Permissions
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define the roles and permissions for different types of
+    | users in your application. This will be used to control access to
+    | various parts of the application and database.
+    |
+    */
+
+    'roles' => [
+        'admin' => [
+            'permissions' => [
+                'manage_users',
+                'manage_projects',
+                'view_reports',
+                'manage_roles',
+            ],
+        ],
+        'user' => [
+            'permissions' => [
+                'view_projects',
+                'create_entries',
+                'view_reports',
+            ],
+        ],
+        'guest' => [
+            'permissions' => [
+                'view_projects',
+            ],
+        ],
+    ],
+
 ];
