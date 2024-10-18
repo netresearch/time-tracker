@@ -27,6 +27,7 @@ return new class extends Migration
             $table->boolean('suggest_time')->default(true);
             $table->boolean('show_future')->default(true);
             $table->string('locale')->default('de');
+            $table->softDeletes(); // P6410
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
