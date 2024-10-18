@@ -19,6 +19,14 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('username');
+            $table->string('abbr');
+            $table->string('type');
+            $table->string('jira_token');
+            $table->boolean('show_empty_line');
+            $table->boolean('suggest_time');
+            $table->boolean('show_future');
+            $table->string('locale');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
