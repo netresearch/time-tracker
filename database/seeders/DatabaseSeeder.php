@@ -21,6 +21,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        User::factory()->create([
+            'name' => 'Default User',
+            'email' => 'default@example.com',
+            'password' => Hash::make('password'),
+        ]);
+
         // Seed initial data for roles and permissions
         DB::table('roles')->insert([
             ['name' => 'admin'],
